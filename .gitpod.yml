@@ -3,3 +3,8 @@ image:
 tasks:
   - init: Start Databse
   - command: mkdir -p /workspace/data && mongod --dbpath /workspace/data
+ports:
+  - port: 4200
+    visibility: public
+  - port: 3000
+    visibility: public
