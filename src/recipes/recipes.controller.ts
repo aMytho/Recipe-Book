@@ -6,9 +6,9 @@ import { Recipe } from './schemas/recipe.schema';
 export class RecipesController {
     constructor(private recipeService: RecipesService) { }
 
-    @Get("get")
+    @Get("all")
     async getRecipes() {
-        let recipe = await this.recipeService.getRecipe();
+        let recipe = await this.recipeService.getAllRecipes();
         console.log(recipe);
         return recipe
     }
@@ -16,7 +16,7 @@ export class RecipesController {
     @Get("add")
     async add() {
         await this.recipeService.create();
-        return await this.recipeService.getRecipe();
+        return await this.recipeService.getRecipeByName("test");
     }
 
     /**

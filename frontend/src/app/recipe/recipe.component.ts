@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RecipeService } from './recipe.service';
 
 @Component({
@@ -7,17 +7,11 @@ import { RecipeService } from './recipe.service';
   styleUrls: ['./recipe.component.scss']
 })
 export class RecipeComponent implements OnInit {
+  @Input()
+  recipe: Recipe | undefined
   data:any | undefined;
   constructor(private recipeService: RecipeService) { }
   
   ngOnInit(): void {
-    this.recipeService.getRecipe("example").then(data => {
-      alert(data);
-      this.data = data;
-    })
-    
   }
-
-  
-
 }

@@ -9,15 +9,6 @@ export class RecipesService {
 
     }
 
-    getRecipe() {
-        return new Promise(resolve => {
-            this.recipeModal.find((err, result) => {
-                console.log(result);
-                resolve(result)
-            })
-        })
-    }
-
     async create(): Promise<Recipe> {
         let testRecipe: Recipe = {
             name: "food",
@@ -45,6 +36,15 @@ export class RecipesService {
                     resolve(recipe);
                     console.log(`Found ${recipe.name}`);
                 }
+            })
+        })
+    }
+
+    getAllRecipes() {
+        return new Promise(resolve => {
+            this.recipeModal.find((err, result) => {
+                console.log(result);
+                resolve(result)
             })
         })
     }

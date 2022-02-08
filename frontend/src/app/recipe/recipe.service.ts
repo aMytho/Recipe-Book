@@ -5,15 +5,20 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RecipeService {
-
-  dbURL = `https://3000-amytho-recipebook-xkj0be4npum.ws-us30.gitpod.io/recipes/get`
+  private dbURL = `https://3000-amytho-recipebook-xkj0be4npum.ws-us30.gitpod.io/recipes`
   constructor(private http: HttpClient) { }
 
   async getRecipe(name:string) {
-    let request = await fetch(this.dbURL);
+    let request = await fetch(`${this.dbURL}/${name}`);
     let result = await request.json();
     console.log(result)
-    alert(result[0].name);
+    return result;
+  }
+
+  async getAllRecipes() {
+    let request = await fetch(`${this.dbURL}/all`);
+    let result = await request.json();
+    console.log(result)
     return result;
   }
 }
