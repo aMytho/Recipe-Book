@@ -1,4 +1,6 @@
 <!--Generates a recipe for each recipe entry-->
-<div *ngFor="let recipe of recipes">
-    <app-recipe [recipe]="recipe"></app-recipe>
-</div>
+<mat-grid-list cols="2" *ngFor="let recipe of recipes">
+    <mat-grid-tile>
+        <app-recipe [recipe]="recipe"></app-recipe>
+    </mat-grid-tile>
+</mat-grid-list>
