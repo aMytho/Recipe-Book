@@ -6,6 +6,9 @@ import { Recipe } from './schemas/recipe.schema';
 export class RecipesController {
     constructor(private recipeService: RecipesService) { }
 
+    /**
+     * Returns all recipes
+     */
     @Get("all")
     async getRecipes() {
         let recipe = await this.recipeService.getAllRecipes();
@@ -13,6 +16,9 @@ export class RecipesController {
         return recipe
     }
 
+    /**
+     * Adds a default recipe
+     */
     @Get("add")
     async add() {
         await this.recipeService.create();
@@ -20,11 +26,11 @@ export class RecipesController {
     }
 
     /**
-     * Returns a specific recipe by name
+     * Returns a specific recipe by name (/hamburger, /lettuce, etc)
      */
-    @Get(':id')
+    @Get(':name')
     async findOne(@Param() params): Promise<Recipe | null> {
-        let recipe = await this.recipeService.getRecipeByName(params.id);
+        let recipe = await this.recipeService.getRecipeByName(params.name);
         if (recipe) {
             return recipe;
         }
