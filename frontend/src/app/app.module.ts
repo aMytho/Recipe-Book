@@ -16,7 +16,13 @@ import { MatTableModule} from "@angular/material/table"
 import { MatIconModule} from "@angular/material/icon"
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { TableComponent } from './table/table.component'
+import { TableComponent } from './table/table.component';
+import { CreateComponent } from './create/create.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from "@angular/material/input"
 
 @NgModule({
   declarations: [
@@ -24,7 +30,8 @@ import { TableComponent } from './table/table.component'
     RecipeComponent,
     RecipeListComponent,
     NavbarComponent,
-    TableComponent
+    TableComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,12 @@ import { TableComponent } from './table/table.component'
     MatSidenavModule,
     MatIconModule,
     MatTableModule,
-    HttpClientModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
