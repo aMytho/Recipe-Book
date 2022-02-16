@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RecipeService {
-  private dbURL = `https://3000-amytho-recipebook-xkj0be4npum.ws-us31.gitpod.io/recipes`
+  private dbURL = `https://3000-amytho-recipebook-xkj0be4npum.ws-us32.gitpod.io/recipes`
   constructor(private http: HttpClient) { }
 
   async getRecipe(name:string) {
