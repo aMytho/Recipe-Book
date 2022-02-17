@@ -1,0 +1,19 @@
+<div class="container">
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Recipe to Delete</mat-label>
+            <input matInput placeholder="Ex. Pizza" #recipe>
+        </mat-form-field>
+
+        <button mat-raised-button color="warn" (click)="deleteRecipe(recipe.value)">Delete</button>
+    </form>
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Recipes To Delete</mat-label>
+            <input matInput placeholder="Ex. Pizza Ham Lettuce" #recipes>
+        </mat-form-field>
+
+        <button mat-raised-button color="warn" (click)="deleteRecipe(recipes.value)">Delete Many</button>
+    </form>
+</div>
