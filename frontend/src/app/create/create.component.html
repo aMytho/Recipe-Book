@@ -1,7 +1,7 @@
 <div class="container">
     <div [hidden]="submitted">
         <h1>Recipe Form</h1>
-        <form (ngSubmit)="onSubmit()" #recipeForm="ngForm" class="example-form">
+        <form (ngSubmit)="onSubmit(recipeForm.value)" #recipeForm="ngForm" class="example-form">
             <mat-form-field class="form-group example-full-width" appearance="fill">
                 <mat-label for="name">Name</mat-label>
                 <input matInput type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name"
@@ -56,7 +56,7 @@
             <button mat-button color="primary" type="submit" class="btn btn-success"
                 [disabled]="!recipeForm.form.valid">Submit</button>
             <button mat-button color="primary" type="button" class="btn btn-default"
-                (click)="newRecipe(); recipeForm.reset()">Reset</button>
+                (click)="recipeForm.reset()">Reset</button>
         </form>
     </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../recipe/recipe.service';
 import { Recipe } from './recipe';
 
 @Component({
@@ -8,7 +9,9 @@ import { Recipe } from './recipe';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private recipeService: RecipeService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -17,7 +20,11 @@ export class CreateComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit(recipe: globalThis.Recipe) {
+    this.submitted = true;
+    alert(JSON.stringify(recipe));
+    this.recipeService.createRecipe(recipe);
+  }
 
   newRecipe() {
     this.model = new Recipe("Default", 77, 'Description here', "food", "Instructions", "URL", "notes");

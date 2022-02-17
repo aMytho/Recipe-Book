@@ -21,4 +21,32 @@ export class RecipeService {
     console.log(result)
     return result;
   }
+
+  async deleteRecipe(recipe: string) {
+    let request = await fetch(`${this.dbURL}/${recipe}`, {
+      method: "DELETE"
+    });
+    let result = await request.json();
+    console.log(result);
+    return result;
+  }
+
+  async deleteManyRecipes(recipes: string[]) {
+    let deleteCount = 0;
+    for (let i = 0; i < recipes.length;i++) {
+      let deleted = await this.deleteRecipe(recipes[i]);
+      if (deleted) deleteCount++;
+    }
+    return deleteCount;
+  }
+
+  async createRecipe(recipe: Recipe) {
+    let request = await fetch(`${this.dbURL}`, {
+      method: "POST",
+      headers: [
+        ['Content-Type', 'application/json']
+      ],
+      body: JSON.stringify(recipe)
+    })
+  }
 }

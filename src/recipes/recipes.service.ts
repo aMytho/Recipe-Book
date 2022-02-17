@@ -12,17 +12,10 @@ export class RecipesService {
     /**
      * Creates and returns a defualt recipe. Just a template, will replace later
      */
-    async create(): Promise<Recipe> {
-        let testRecipe: Recipe = {
-            name: "food",
-            totalCookTime: 60,
-            description: "desc",
-            imageURL: "/img",
-            ingredients: [],
-            instructions: "a",
-            notes: "a"
-        }
-        const createdCat = new this.recipeModal(testRecipe);
+    async create(recipe: Recipe): Promise<Recipe> {
+        recipe.imageURL = "URL";
+        recipe.ingredients= [];
+        const createdCat = new this.recipeModal(recipe);
         return createdCat.save();
     }
 
@@ -59,6 +52,37 @@ export class RecipesService {
             this.recipeModal.find((err, result) => {
                 console.log(result);
                 resolve(result)
+            })
+        })
+    }
+
+
+    /**
+     * Removes a recipe by name and returns it
+     * @param recipe The recipe to remove
+     */
+    deleteRecipeByName(recipe: string): Promise<null | boolean> {
+        return new Promise(resolve => {
+            this.recipeModal.findOneAndDelete({name: recipe}, {}, (err, doc) => {
+                console.log(`Deleting ${doc.name}`);
+                if (err) {
+                    resolve(null);
+                    return
+                }
+                if (doc) {
+                    resolve(true);
+                    return
+                }
+                resolve(true);
+                return
+            })
+        })
+    }
+
+    deleteRecipesByName(recipes: string[]) {
+        return new Promise(resolve => {
+            this.recipeModal.deleteMany({}, {}, (err) => {
+                
             })
         })
     }
