@@ -3,4 +3,7 @@
     <mat-grid-tile *ngFor="let recipe of recipes">
         <app-recipe [recipe]="recipe"></app-recipe>
     </mat-grid-tile>
+    <div *ngIf="recipes.length == 0">
+        <h1>No recipes were found.</h1>
+    </div>
 </mat-grid-list>
