@@ -23,7 +23,7 @@ export class RecipeService {
   }
 
   async deleteRecipe(recipe: string) {
-    let request = await fetch(`${this.dbURL}/${recipe}`, {
+    let request = await fetch(`${this.dbURL}/${recipe.trim()}`, {
       method: "DELETE"
     });
     let result = await request.json();

@@ -22,7 +22,6 @@ export class CreateComponent implements OnInit {
 
   onSubmit(recipe: globalThis.Recipe) {
     this.submitted = true;
-    alert(JSON.stringify(recipe));
     this.recipeService.createRecipe(recipe);
   }
 
