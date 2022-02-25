@@ -14,4 +14,8 @@ export class RecipeComponent implements OnInit {
   
   ngOnInit(): void {
   }
+
+  setCurrentRecipe() {
+    this.recipeService.currentRecipe = this.recipe;
+  }
 }
