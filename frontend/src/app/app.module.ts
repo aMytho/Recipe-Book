@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from "@angular/material/card"
 import { MatButtonModule } from "@angular/material/button";
-import {MatGridListModule} from "@angular/material/grid-list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { MatTableModule} from "@angular/material/table"
@@ -43,7 +42,6 @@ import { RecipeViewComponent } from './recipe-view/recipe-view.component'
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatGridListModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
