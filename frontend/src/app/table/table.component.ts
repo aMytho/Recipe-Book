@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.recipeService.getAllRecipes().then((data:Recipe[]) => {
       this.dataSource = data.map((element: Recipe) => {
-        return {name: element.name, totalCookTime: element.totalCookTime, description: element.description}
+        return {name: element.name, totalCookTime: element.totalCookTime, description: element.description, ingredients: element.ingredients}
       });
     })
   }
@@ -35,6 +35,11 @@ export class TableComponent implements OnInit {
       columnDef: 'description',
       header: 'Decription',
       cell: (recipe: Recipe) => `${recipe.description}`
+    },
+    {
+      columnDef: 'ingredients',
+      header: 'Ingredients',
+      cell: (recipe: Recipe) => `${recipe.ingredients}`
     }
   ];
   displayedColumns = this.columns.map(c => c.columnDef);
