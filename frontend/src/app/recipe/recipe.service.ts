@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RecipeService {
-  private dbURL = `https://3000-amytho-recipebook-xkj0be4npum.ws-us32.gitpod.io/recipes`
+  private dbURL = `https://3000-amytho-recipebook-6rjdoz238z6.ws-us34.gitpod.io/recipes`;
+  currentRecipe: Recipe | undefined;
   constructor(private http: HttpClient) { }
 
   async getRecipe(name:string) {
@@ -23,7 +24,7 @@ export class RecipeService {
   }
 
   async deleteRecipe(recipe: string) {
-    let request = await fetch(`${this.dbURL}/${recipe}`, {
+    let request = await fetch(`${this.dbURL}/${recipe.trim()}`, {
       method: "DELETE"
     });
     let result = await request.json();

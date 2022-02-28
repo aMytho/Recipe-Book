@@ -7,7 +7,7 @@ import { RecipeService } from '../recipe/recipe.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  dataSource:any
+  dataSource:any = [];
   constructor(
     private recipeService: RecipeService
   ) { }

@@ -1,20 +1,20 @@
-<mat-card class="example-card" *ngIf="recipe">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{recipe.name}}</mat-card-title>
-        <mat-card-subtitle>{{recipe.totalCookTime}} minutes</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-            {{recipe.description}}
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button color="warn">Edit</button>
-        <button mat-button color="primary">View</button>
-    </mat-card-actions>
-</mat-card>
-<mat-card class="example-card" *ngIf="!recipe">
-    <h2>Loading</h2>
-</mat-card>
+<div class="ft-recipe"> 
+    <div class="ft-recipe__thumb"><span id="close-modal"><i class="ion ion-md-close"></i></span>
+      <h3>Today's Featured Recipe</h3><img src="https://zippypaws.com/app/uploads/2018/05/strawberry-waffles-1024x668.jpg" alt="Strawberry Waffle"/>
+    </div>
+    <div class="ft-recipe__content">
+      <header class="content__header">
+        <div class="row-wrapper">
+          <h2 class="recipe-title">{{recipe.name}}</h2>
+          <div class="user-rating"></div>
+        </div>
+        <ul class="recipe-details">
+          <li class="recipe-details-item time"><span class="value">{{recipe.totalCookTime}}</span><span class="title">Minutes</span></li>
+        </ul>
+      </header>
+      <p class="description">
+         {{recipe.description}}</p>
+
+      <footer class="content__footer"><a href="#">View Recipe</a></footer>
+    </div>
+  </div>

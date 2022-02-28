@@ -19,7 +19,7 @@ export class RecipesController {
 
     @Delete(":name")
     async delete(@Param() params) {
-        return await this.recipeService.deleteRecipeByName(params.name);
+        return await this.recipeService.deleteRecipeByName(params.name.toLowerCase());
     }
 
     @Post()

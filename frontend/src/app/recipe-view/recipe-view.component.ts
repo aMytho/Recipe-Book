@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe/recipe.service';
 
 @Component({
@@ -8,20 +7,14 @@ import { RecipeService } from '../recipe/recipe.service';
   styleUrls: ['./recipe-view.component.scss']
 })
 export class RecipeViewComponent implements OnInit {
-  recipe: Recipe | undefined
+  recipe: Recipe | any;
   constructor(
-    private route: ActivatedRoute,
     private recipeService: RecipeService
   ) { }
 
+  // Sets it equal to whatever the current recipe is
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params:any) => {
-      alert(params["recipe"]);
-      // @ts-ignore
-      this.recipeService.getRecipe().then(recipe => {
-        this.recipe = recipe;
-      })
-    });
+    this.recipe = this.recipeService.currentRecipe;
   }
 
 }
