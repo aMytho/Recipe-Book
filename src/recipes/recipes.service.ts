@@ -63,17 +63,17 @@ export class RecipesService {
      */
     deleteRecipeByName(recipe: string): Promise<null | boolean> {
         return new Promise(resolve => {
-            this.recipeModal.findOneAndDelete({name: recipe}, {}, (err, doc) => {
-                console.log(`Deleting ${doc.name}`);
+            this.recipeModal.findOneAndDelete({name: { $regex: new RegExp("^" + recipe.toLowerCase(), "i") }}, {}, (err, doc) => {
                 if (err) {
                     resolve(null);
                     return
                 }
                 if (doc) {
+                    console.log(`Deleting ${doc.name}`);
                     resolve(true);
                     return
                 }
-                resolve(true);
+                resolve(false);
                 return
             })
         })
