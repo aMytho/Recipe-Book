@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
-  private dbURL = `https://3000-amytho-recipebook-6rjdoz238z6.ws-us34.gitpod.io/recipes`;
+  private dbURL = `https://3000-amytho-recipebook-14a9xkwxdud.ws-us34.gitpod.io/recipes`;
   currentRecipe: Recipe | undefined;
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   async getRecipe(name:string) {
     let request = await fetch(`${this.dbURL}/${name}`);
