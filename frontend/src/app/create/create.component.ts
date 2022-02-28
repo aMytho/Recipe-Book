@@ -22,6 +22,7 @@ export class CreateComponent implements OnInit {
 
   onSubmit(recipe: globalThis.Recipe) {
     this.submitted = true;
+    recipe.name = recipe.name.trim();
     this.recipeService.createRecipe(recipe);
   }
 
