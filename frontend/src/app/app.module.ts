@@ -23,7 +23,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from "@angular/material/input";
 import { DeleteComponent } from './delete/delete.component';
-import { RecipeViewComponent } from './recipe-view/recipe-view.component'
+import { RecipeViewComponent } from './recipe-view/recipe-view.component';
+import { EditComponent } from './edit/edit.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RecipeViewComponent } from './recipe-view/recipe-view.component'
     TableComponent,
     CreateComponent,
     DeleteComponent,
-    RecipeViewComponent
+    RecipeViewComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

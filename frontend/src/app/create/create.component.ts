@@ -29,4 +29,8 @@ export class CreateComponent implements OnInit {
   newRecipe() {
     this.model = new Recipe("Default", 77, 'Description here', "food", "Instructions", "URL", "notes");
   }
+
+  setCurrentRecipe() {
+    this.recipeService.currentRecipe = this.model as globalThis.Recipe;
+  }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { RecipesService } from './recipes.service';
 import { Recipe } from './schemas/recipe.schema';
 
@@ -19,12 +19,19 @@ export class RecipesController {
 
     @Delete(":name")
     async delete(@Param() params) {
+        console.log(`Deleting ${params.name}`);
         return await this.recipeService.deleteRecipeByName(params.name.toLowerCase());
+    }
+
+    @Put("")
+    async update(@Body() recipeInfo: Recipe) {
+        console.log(`Updating ${recipeInfo.name}`);
+        return await this.recipeService.updateRecipe(recipeInfo);
     }
 
     @Post()
     async createRecipe(@Body() recipeInfo: Recipe) {
-        console.log(recipeInfo, 123)
+        console.log(`Creating ${recipeInfo.name}`);
         return await this.recipeService.create(recipeInfo);
     }
 

@@ -41,12 +41,24 @@ export class RecipeService {
   }
 
   async createRecipe(recipe: Recipe) {
-    let request = await fetch(`${this.dbURL}`, {
+    fetch(`${this.dbURL}`, {
       method: "POST",
       headers: [
         ['Content-Type', 'application/json']
       ],
       body: JSON.stringify(recipe)
+    })
+  }
+
+  async editRecipe(recipe: Recipe) {
+    fetch(`${this.dbURL}`, {
+      method: "PUT",
+      headers: [
+        ['Content-Type', 'application/json']
+      ],
+      body: JSON.stringify(recipe)
+    }).catch(err => {
+      alert(err)
     })
   }
 }

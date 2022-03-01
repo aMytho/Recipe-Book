@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from '../recipe/recipe.service';
 
 @Component({
@@ -11,10 +11,10 @@ export class RecipeViewComponent implements OnInit {
   recipe: Recipe | any;
   constructor(
     private route: ActivatedRoute,
+    private navigate: Router,
     private recipeService: RecipeService
   ) { }
 
-  // Sets it equal to whatever the current recipe is
   // Sets it equal to whatever the current recipe is
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: any) => {
@@ -27,4 +27,18 @@ export class RecipeViewComponent implements OnInit {
       }
     });
   }
+
+  editRecipe() {
+    this.recipeService.currentRecipe = this.recipe;
+    this.navigate.navigateByUrl("/edit")
+  }
+
+  deleteCurrentRecipe() {
+    this.recipeService.deleteRecipe(this.recipe.name).then(data => {
+      this.recipeService.currentRecipe = undefined;
+      this.navigate.navigateByUrl("/list");
+    })
+  }
+
+  
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './create/create.component';
 import { DeleteComponent } from './delete/delete.component';
+import { EditComponent } from './edit/edit.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeViewComponent } from './recipe-view/recipe-view.component';
 import { RecipeComponent } from './recipe/recipe.component';
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: "view", component: RecipeViewComponent
+  },
+  {
+    path: "edit", component: EditComponent
   }
 ];
 

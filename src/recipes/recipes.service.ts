@@ -14,7 +14,6 @@ export class RecipesService {
      */
     async create(recipe: Recipe): Promise<Recipe> {
         recipe.imageURL = "URL";
-        recipe.ingredients= [];
         const createdCat = new this.recipeModal(recipe);
         return createdCat.save();
     }
@@ -82,6 +81,20 @@ export class RecipesService {
     deleteRecipesByName(recipes: string[]) {
         return new Promise(resolve => {
             this.recipeModal.deleteMany({}, {}, (err) => {
+                
+            })
+        })
+    }
+
+    updateRecipe(recipe: Recipe) {
+        return new Promise(resolve => {
+            console.log(222, recipe)
+            this.recipeModal.updateOne({name: recipe.name}, recipe, {}, function(err, doc) {
+                if (doc) {
+                    resolve(true)
+                } else {
+                    resolve(false)
+                }
                 
             })
         })
