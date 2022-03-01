@@ -5,22 +5,11 @@ interface Recipe {
 
     description: string;
 
-    ingredients: Ingredient[];
+    ingredients: string;
 
     instructions: string;
 
     imageURL: string;
 
     notes: string;
-}
-
-type Ingredient = {
-    /**
-     * The name of the ingredient
-     */
-    name: string;
-    /**
-     * The amount of the ingredient. 
-     */
-    amount: string;
 }

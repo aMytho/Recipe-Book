@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Ingredient } from './recipe.entity';
 
 export type RecipeDocument = Recipe & Document;
 
@@ -28,7 +27,7 @@ export class Recipe {
      * The items required to make the recipe
      */
     @Prop({ required: false })
-    ingredients: Ingredient[];
+    ingredients: string;
 
     /**
      * Insturctions on how to make the recipe
