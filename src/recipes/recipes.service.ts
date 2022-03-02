@@ -10,7 +10,7 @@ export class RecipesService {
     }
 
     /**
-     * Creates and returns a defualt recipe. Just a template, will replace later
+     * Creates and returns a new recipe.
      */
     async create(recipe: Recipe): Promise<Recipe> {
         recipe.imageURL = "URL";

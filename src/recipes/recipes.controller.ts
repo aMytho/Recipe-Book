@@ -16,19 +16,27 @@ export class RecipesController {
         return recipe
     }
 
-
+    /**
+     * Deletes a recipe by its name
+     */
     @Delete(":name")
     async delete(@Param() params) {
         console.log(`Deleting ${params.name}`);
         return await this.recipeService.deleteRecipeByName(params.name.toLowerCase());
     }
 
+    /**
+     * Updates a recipe
+     */
     @Put("")
     async update(@Body() recipeInfo: Recipe) {
         console.log(`Updating ${recipeInfo.name}`);
         return await this.recipeService.updateRecipe(recipeInfo);
     }
 
+    /**
+     * Creates a new recipe.
+     */
     @Post()
     async createRecipe(@Body() recipeInfo: Recipe) {
         console.log(`Creating ${recipeInfo.name}`);
