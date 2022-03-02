@@ -1,6 +1,6 @@
 <div class="ft-recipe"> 
     <div class="ft-recipe__thumb"><span id="close-modal"><i class="ion ion-md-close"></i></span>
-      <h3>Today's Featured Recipe</h3><img src="https://zippypaws.com/app/uploads/2018/05/strawberry-waffles-1024x668.jpg" alt="Strawberry Waffle"/>
+      <h3>Today's Featured Recipe</h3>
     </div>
     <div class="ft-recipe__content">
       <header class="content__header">
@@ -9,7 +9,7 @@
           <div class="user-rating"></div>
         </div>
         <ul class="recipe-details">
-          <li class="recipe-details-item time"><span class="value">{{recipe.totalCookTime}}</span><span class="title">Minutes</span></li>
+          <li class="recipe-details-item time"><span class="value">{{recipe.totalCookTime}} </span><span class="title">Minutes</span></li>
         </ul>
       </header>
       <p class="description">
@@ -17,4 +17,5 @@
         <button mat-button color="primary" type="button" class="btn btn-primary" (click)="editRecipe()">Edit</button>
         <button mat-button color="primary" type="button" class="btn btn-primary" (click)="deleteCurrentRecipe()">Delete</button>
     </div>
+    <img src="https://zippypaws.com/app/uploads/2018/05/strawberry-waffles-1024x668.jpg" alt="Strawberry Waffle"/>
   </div>
