@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RecipeService {
-  private dbURL = `https://3000-amytho-recipebook-14a9xkwxdud.ws-us34.gitpod.io/recipes`;
+  private dbURL = `https://3000-amytho-recipebook-14a9xkwxdud.ws-us38.gitpod.io/recipes`;
   currentRecipe: Recipe | undefined;
   constructor() { }
 
