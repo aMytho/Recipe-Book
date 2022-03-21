@@ -1,18 +1,14 @@
-<div style="margin: auto;width: 60%;">
+<div class="flex justify-center space-x-2">
   <div class="ft-recipe__thumb"><span id="close-modal"><i class="ion ion-md-close"></i></span>
   </div>
   <div class="ft-recipe__content">
-    <header class="content__header">
-      <div class="row-wrapper">
-        <h2 class="recipe-title">{{recipe.name}}</h2>
-        <div class="user-rating"></div>
-      </div>
-      <p>Total Cook Time: {{recipe.totalCookTime}}</p>
-    </header>
-    <p class="description">{{recipe.description}}</p>
+    <p class="text-3xl">{{recipe.name}}</p>
+    <p class="text-xl">Total Cook Time: {{recipe.totalCookTime}}</p>
+    <p class="text-xl">{{recipe.description}}</p>
+    <p class="my-8">{{recipe.instructions}}</p>
+
     <button mat-button color="primary" type="button" class="btn btn-primary" (click)="editRecipe()">Edit</button>
-    <button mat-button color="primary" type="button" class="btn btn-primary"
-      (click)="deleteCurrentRecipe()">Delete</button>
+    <button mat-button color="primary" type="button" class="rounded-lg" (click)="deleteCurrentRecipe()">Delete</button>
   </div>
-  <img src="https://zippypaws.com/app/uploads/2018/05/strawberry-waffles-1024x668.jpg" alt="Strawberry Waffle" />
 </div>
+<img class="mx-auto w-3/4" src="https://zippypaws.com/app/uploads/2018/05/strawberry-waffles-1024x668.jpg" alt="Strawberry Waffle" />
