@@ -6,7 +6,7 @@
                 <mat-label for="name">Name</mat-label>
                 <input matInput type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name"
                     #name="ngModel">
-                <mat-error [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <mat-error [hidden]="name.valid || name.pristine" class="alert alert-danger mb-1">
                     Name is required
                 </mat-error>
             </mat-form-field>
@@ -16,7 +16,7 @@
                 <mat-label for="description">Description</mat-label>
                 <input matInput type="text" class="form-control" id="description" required [(ngModel)]="model.description"
                     name="description" #description="ngModel">
-                    <mat-error [hidden]="description.valid || description.pristine" class="alert alert-danger">
+                    <mat-error [hidden]="description.valid || description.pristine" class="alert alert-danger mb-2">
                         Description is required
                     </mat-error>
             </mat-form-field>
@@ -25,7 +25,7 @@
                 <mat-label for="cookTime">Cook Time</mat-label>
                 <input matInput type="number" class="form-control" id="cookTime" required [(ngModel)]="model.totalCookTime"
                     name="totalCookTime" #totalCookTime="ngModel">
-                    <mat-error [hidden]="totalCookTime.valid || totalCookTime.pristine" class="alert alert-danger">
+                    <mat-error [hidden]="totalCookTime.valid || totalCookTime.pristine" class="alert alert-danger mb-2">
                         Cook Time is required
                     </mat-error>
             </mat-form-field>
@@ -34,7 +34,7 @@
                 <mat-label for="instructions">Instructions</mat-label>
                 <input matInput type="text" class="form-control" id="instructions" required [(ngModel)]="model.instructions"
                     name="instructions" #instructions="ngModel">
-                    <mat-error [hidden]="instructions.valid || instructions.pristine" class="alert alert-danger">
+                    <mat-error [hidden]="instructions.valid || instructions.pristine" class="alert alert-danger mb-2">
                         Instructions are required
                     </mat-error>
             </mat-form-field>
@@ -43,7 +43,7 @@
                 <mat-label for="ingredients">Ingredients</mat-label>
                 <input matInput type="text" class="form-control" id="ingredients" required [(ngModel)]="model.ingredients"
                     name="ingredients" #ingredients="ngModel">
-                    <mat-error [hidden]="ingredients.valid || ingredients.pristine" class="alert alert-danger">
+                    <mat-error [hidden]="ingredients.valid || ingredients.pristine" class="alert alert-danger mb-2">
                         Ingredients are required
                     </mat-error>
             </mat-form-field>
