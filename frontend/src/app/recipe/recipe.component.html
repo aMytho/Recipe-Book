@@ -1,11 +1,11 @@
-<mat-card class="example-card" *ngIf="recipe">
+<mat-card class="example-card flex flex-col drop-shadow-xl" *ngIf="recipe">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{recipe.name}}</mat-card-title>
         <mat-card-subtitle>{{recipe.totalCookTime}} minutes</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
+    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content class="mt-2 prose prose-base">
         <p>
             {{recipe.description}}
         </p>
