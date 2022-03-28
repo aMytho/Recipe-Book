@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Recipe } from '../create/recipe';
 import { RecipeService } from '../recipe/recipe.service';
 
@@ -7,15 +7,10 @@ import { RecipeService } from '../recipe/recipe.service';
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.scss']
 })
-export class EditComponent implements OnInit {
+export class EditComponent {
   model: Recipe
-  constructor(
-    private recipeService: RecipeService
-  ) {
-    this.model = this.recipeService.currentRecipe as Recipe
-  }
-
-  ngOnInit(): void {
+  constructor(private recipeService: RecipeService) {
+    this.model = this.recipeService.currentRecipe as Recipe;
   }
 
   submitted = false;

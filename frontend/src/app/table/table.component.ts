@@ -42,5 +42,5 @@ export class TableComponent implements OnInit {
       cell: (recipe: Recipe) => `${recipe.ingredients}`
     }
   ];
-  displayedColumns = this.columns.map(c => c.columnDef);
+  displayedColumns = this.columns.map((c) => c.columnDef);
 }

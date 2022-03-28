@@ -11,7 +11,7 @@ export class RecipesController {
      */
     @Get("all")
     async getRecipes() {
-        let recipe = await this.recipeService.getAllRecipes();
+        const recipe = await this.recipeService.getAllRecipes();
         console.log(recipe);
         return recipe
     }
@@ -48,7 +48,7 @@ export class RecipesController {
      */
     @Get(':name')
     async findOne(@Param() params): Promise<Recipe | null> {
-        let recipe = await this.recipeService.getRecipeByName(params.name);
+        const recipe = await this.recipeService.getRecipeByName(params.name);
         if (recipe) {
             return recipe;
         }

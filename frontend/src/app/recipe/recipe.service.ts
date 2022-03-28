@@ -7,12 +7,12 @@ export class RecipeService {
   private dbURL = `https://3000-amytho-recipebook-14a9xkwxdud.ws-us38.gitpod.io/recipes`;
 
   currentRecipe: Recipe | undefined;
-  constructor() { }
+  constructor() {}
 
   async getRecipe(name:string) {
     let request = await fetch(`${this.dbURL}/${name}`);
     let result = await request.json();
-    console.log(result)
+    console.log(result);
     return result;
   }
 
@@ -59,7 +59,7 @@ export class RecipeService {
       ],
       body: JSON.stringify(recipe)
     }).catch(err => {
-      alert(err)
+      alert(err);
     })
   }
 }

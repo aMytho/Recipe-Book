@@ -10,12 +10,11 @@ export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
   constructor(
     private recipeService: RecipeService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.recipeService.getAllRecipes().then(data => {
       this.recipes = data;
     })
   }
-
 }

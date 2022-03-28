@@ -38,13 +38,13 @@ export class Recipe {
     /**
      * The path to the image of the recipe
      */
-    @Prop({required: false})
+    @Prop({ required: false })
     imageURL: string;
 
     /**
      * Any additional information about the recipe
      */
-    @Prop({required: false})
+    @Prop({ required: false })
     notes: string;
 }
 
